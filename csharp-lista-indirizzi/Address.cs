@@ -13,9 +13,9 @@ namespace csharp_lista_indirizzi
         string street;
         string city;
         string province;
-        string zip;
+        int zip;
 
-        public Address(string name, string surname, string street, string city, string province, string zip)
+        public Address(string name, string surname, string street, string city, string province, int zip)
         {
             this.name = name;
             this.surname = surname;
@@ -30,7 +30,7 @@ namespace csharp_lista_indirizzi
         public string GetStreet() { return street; }
         public string GetCity() { return city;}
         public string GetProvince() {  return province;}
-        public string GetZip() { return zip;}
+        public int GetZip() { return zip;}
 
         public override string ToString()
         {
