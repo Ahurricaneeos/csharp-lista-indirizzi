@@ -32,8 +32,16 @@ namespace csharp_lista_indirizzi
         public string GetProvince() {  return province;}
         public string GetZip() { return zip;}
 
-
+        public override string ToString()
+        {
+            string rappStr = "------- Indirizzi: -------" + "\n";
+            rappStr += "Nome: " + this.name + "\n";
+            rappStr += "Cognome: " + this.surname + "\n";
+            rappStr += "Via: " + this.street + "\n";
+            rappStr += "Città: " + this.city + "\n";
+            rappStr += "Provincia: " + this.province + "\n";
+            rappStr += "Cap: " + this.zip + "\n";
+            return rappStr;
+        }
     }
-
-     
 }
