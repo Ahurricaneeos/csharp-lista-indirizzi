@@ -37,3 +37,7 @@ catch (Exception e)
 {
     Console.WriteLine(e.Message);
 }
+foreach (Address address in addresses)
+{
+    Console.WriteLine(address);
+}

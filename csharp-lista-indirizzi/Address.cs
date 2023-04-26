@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +19,35 @@ namespace csharp_lista_indirizzi
         public Address(string name, string surname, string street, string city, string province, int zip)
         {
             this.name = name;
+            if (name == "")
+            {
+                throw new ArgumentException("Valore non valido..");
+            }
             this.surname = surname;
+            if (surname == "")
+            {
+                throw new ArgumentException("Valore non valido..");
+            }
             this.street = street;
+            if (street == "")
+            {
+                throw new ArgumentException("Valore non valido..");
+            }
             this.city = city;
+            if (city == "")
+            {
+                throw new ArgumentException("Valore non valido..");
+            }
             this.province = province;
+            if (province == "")
+            {
+                throw new ArgumentException("Valore non valido..");
+            }
             this.zip = zip;
+            if (zip > 5)
+            {
+                throw new ArgumentException("Valore non valido..");
+            }
         }
 
         public string GetName() { return name; }
@@ -31,6 +56,7 @@ namespace csharp_lista_indirizzi
         public string GetCity() { return city;}
         public string GetProvince() {  return province;}
         public int GetZip() { return zip;}
+            
 
         public override string ToString()
         {
