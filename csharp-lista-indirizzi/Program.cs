@@ -25,7 +25,7 @@ try
             }
             else
             {
-                int zipAddressRead = int.Parse(separatedLine[5]);
+                string zipAddressRead = separatedLine[5];
                 Address AddressRead = new Address(separatedLine[0], separatedLine[1], separatedLine[2], separatedLine[3], separatedLine[4], zipAddressRead);
                 addresses.Add(AddressRead);
                 Console.WriteLine(AddressRead.ToString());

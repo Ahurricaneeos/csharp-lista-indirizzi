@@ -14,40 +14,20 @@ namespace csharp_lista_indirizzi
         string street;
         string city;
         string province;
-        int zip;
+        string zip;
 
-        public Address(string name, string surname, string street, string city, string province, int zip)
+        public Address(string name, string surname, string street, string city, string province, string zip)
         {
+            if (name == "" || surname == "" || street == "" || city == "" || province == "" || zip == "")
+            {
+                throw new ArgumentException("All'indirizzo manca un campo");
+            }
             this.name = name;
-            if (name == "")
-            {
-                throw new ArgumentException("Valore non valido..");
-            }
             this.surname = surname;
-            if (surname == "")
-            {
-                throw new ArgumentException("Valore non valido..");
-            }
             this.street = street;
-            if (street == "")
-            {
-                throw new ArgumentException("Valore non valido..");
-            }
             this.city = city;
-            if (city == "")
-            {
-                throw new ArgumentException("Valore non valido..");
-            }
             this.province = province;
-            if (province == "")
-            {
-                throw new ArgumentException("Valore non valido..");
-            }
             this.zip = zip;
-            if (zip > 5)
-            {
-                throw new ArgumentException("Valore non valido..");
-            }
         }
 
         public string GetName() { return name; }
@@ -55,7 +35,7 @@ namespace csharp_lista_indirizzi
         public string GetStreet() { return street; }
         public string GetCity() { return city;}
         public string GetProvince() {  return province;}
-        public int GetZip() { return zip;}
+        public string GetZip() { return zip;}
             
 
         public override string ToString()
